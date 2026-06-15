@@ -23,6 +23,21 @@ Enable the WebSocket toggle in the TaskerHA app. Without it this profile will ne
 | **For** | Only fire if the entity was in the previous state for at least this duration (`HH:MM:SS`). |
 | **Target attribute** | Watch a specific attribute instead of the main state (e.g. `brightness`, `color_mode`). When set, `%ha_from` and `%ha_to` contain the attribute values, not the entity state. |
 
+<div style="display:flex;gap:16px;margin:24px 0;align-items:flex-start;">
+  <figure style="flex:1;margin:0;text-align:center;">
+    <img src="/on-trigger-state/entity-picker.jpeg" alt="Entity picker with domain filter" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+    <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);">Entity picker — filter by domain and search by ID</figcaption>
+  </figure>
+  <figure style="flex:1;margin:0;text-align:center;">
+    <img src="/on-trigger-state/main-config.jpeg" alt="Main config screen with filter fields" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+    <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);">Filter fields — Target attribute, From, To, and For</figcaption>
+  </figure>
+  <figure style="flex:1;margin:0;text-align:center;">
+    <img src="/on-trigger-state/attribute-mappings.jpeg" alt="Attribute variable mapping screen" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+    <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);">Attribute mappings — assign attributes to <code>%ha_attr_1</code>–<code>%ha_attr_10</code></figcaption>
+  </figure>
+</div>
+
 You can use Tasker variables in any filter field.
 
 ## Multiple entities

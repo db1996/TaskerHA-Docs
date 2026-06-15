@@ -38,3 +38,21 @@ Each instance can be configured with both a **local URL** and a **remote URL**. 
 When your phone connects to a matching SSID, the local URL is used. On any other network (or mobile data), the remote URL is used automatically. No separate tasks or profiles needed for home vs. away.
 
 > Location permissions are required for getting the currently connected Wi-Fi SSID. If you prefer you can revoke the permission after setting up the URL switching
+
+
+## Images
+
+<div style="display:flex;gap:16px;margin:24px 0;align-items:flex-start;">
+  <figure style="flex:1;margin:0;text-align:center;">
+    <img src="/instances/instances-main.png" alt="TaskerHA instances main screen" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+    <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);">Main screen — instance cards with WebSocket toggle, Edit, and Set Default</figcaption>
+  </figure>
+  <figure style="flex:1;margin:0;text-align:center;">
+    <img src="/instances/instances-add-edit.jpeg" alt="Edit instance screen with local URL switching" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+    <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);">Edit Instance — local URL and home Wi-Fi network setup</figcaption>
+  </figure>
+  <figure style="flex:1;margin:0;text-align:center;">
+    <img src="/instances/options.jpeg" alt="Options screen showing battery optimization" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+    <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);">Options tab — battery optimization status and request timeout</figcaption>
+  </figure>
+</div>

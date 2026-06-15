@@ -12,6 +12,21 @@ Calls any Home Assistant service from a Tasker task.
 4. Fill in any required fields. If an `entity_id` is needed, an entity picker with domain filtering and fuzzy search will appear.
 5. Optional data fields (e.g. `brightness`, `transition`) can be toggled on or off with checkboxes. Fields that are turned off are not sent to Home Assistant at all.
 
+<div style="display:flex;gap:16px;margin:24px 0;align-items:flex-start;">
+  <figure style="flex:1;margin:0;text-align:center;">
+    <img src="/call-service/service-domain-picker.jpeg" alt="Service and domain picker" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+    <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);">Pick a domain and service</figcaption>
+  </figure>
+  <figure style="flex:1;margin:0;text-align:center;">
+    <img src="/call-service/target-picker.jpeg" alt="Entity / target picker" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+    <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);">Add target entities, devices, areas and/or labels</figcaption>
+  </figure>
+  <figure style="flex:1;margin:0;text-align:center;">
+    <img src="/call-service/optional-fields.jpeg" alt="Optional service data fields" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+    <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);">Toggle optional fields on or off</figcaption>
+  </figure>
+</div>
+
 ## Tasker variables
 
 You can use Tasker variables (anything starting with `%`) in any text field. They are substituted before the service call is made.

@@ -12,6 +12,9 @@ Actions (Call Service, Get State, Send Message) do **not** use the WebSocket and
 1. Open the **TaskerHA** app and go to the instance settings.
 2. Enable the **WebSocket** toggle.
 3. Android will prompt you to disable battery optimization for TaskerHA — **allow it**.
+4. A pop-up will show you instructions and a button to go to the app settings, you might have to go to battery settings -> allow background usage
+   1. For more detailed information about battery optimization, check here: https://tasker.joaoapps.com/userguide/en/faqs/faq-problem.html#00
+   2. Apply those to TaskerHA instead (except for in-app settings that it mentions)
 
 Without disabling battery optimization, Android may suspend the app in the background and kill the connection. When that happens, profiles silently stop firing with no error.
 
