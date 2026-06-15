@@ -46,7 +46,7 @@ alt="Download from GitHub releases" /></a>
 </div>
 
 
-### 1. Install the Android App
+### 1. Install the Android App test
 
 1. [Download the APK from GitHub Releases](https://github.com/db1996/TaskerHa/releases/latest) or install via [F-Droid](https://f-droid.org/packages/com.github.db1996.taskerha/).
 2. Open TaskerHA and enter your Home Assistant URL (e.g. `http://192.168.1.x:8123` or `https://ha.yourdomain.com`).
