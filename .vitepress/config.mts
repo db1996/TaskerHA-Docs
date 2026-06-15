@@ -58,6 +58,7 @@ export default defineConfig(async () => {
             { text: 'Get State', link: '/actions/get-state' },
             { text: 'Send Message to HA', link: '/actions/send-message' },
             { text: 'Test Connection', link: '/actions/test-connection' },
+            { text: 'Set WebSocket Connection', link: '/actions/set-websocket-connection' },
           ],
         },
         {
