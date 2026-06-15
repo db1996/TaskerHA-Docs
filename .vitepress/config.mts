@@ -1,0 +1,60 @@
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
+  title: 'TaskerHA',
+  description: 'Full Home Assistant integration for Tasker',
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+
+  themeConfig: {
+    logo: '/logo.png',
+
+    nav: [
+      { text: 'Home', link: '/' },
+      { text: 'Guide', link: '/guide/setup' },
+      { text: 'Actions', link: '/actions/call-service' },
+      { text: 'Profiles', link: '/profiles/state-change' },
+    ],
+
+    sidebar: [
+      {
+        text: 'Getting Started',
+        items: [
+          { text: 'Setup', link: '/guide/setup' },
+        ],
+      },
+      {
+        text: 'Actions',
+        items: [
+          { text: 'Call Service', link: '/actions/call-service' },
+          { text: 'Get State', link: '/actions/get-state' },
+          { text: 'Send Message to HA', link: '/actions/send-message' },
+        ],
+      },
+      {
+        text: 'Profiles',
+        items: [
+          { text: 'Trigger State Change', link: '/profiles/state-change' },
+          { text: 'Direct Message from HA', link: '/profiles/direct-message' },
+        ],
+      },
+    ],
+
+    search: {
+      provider: 'local',
+    },
+
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/db1996/TaskerHa' },
+    ],
+
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © db1996',
+    },
+
+    editLink: {
+      pattern: 'https://github.com/db1996/TaskerHA-Docs/edit/main/:path',
+      text: 'Edit this page on GitHub',
+    },
+  },
+})
