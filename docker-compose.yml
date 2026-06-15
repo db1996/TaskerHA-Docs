@@ -1,8 +1,16 @@
 services:
   docs:
+    container_name: taskerha-docs
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "3000:80"
     restart: unless-stopped
+    networks:
+      - npm_network
+
+networks:
+  npm_network:
+    external: true
+    name: nginx-proxy-manager_default  # replace with your actual NPM network name
