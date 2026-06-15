@@ -13,8 +13,6 @@
 
 ## Step 2 — Install the App
 
-Download TaskerHA from one of these sources:
-
 | Source | Notes |
 |--------|-------|
 | [GitHub Releases](https://github.com/db1996/TaskerHa/releases/latest) | Latest version, sideload APK |
@@ -22,52 +20,19 @@ Download TaskerHA from one of these sources:
 
 > You cannot install both versions side by side — uninstall one before switching sources. Your tasks and profiles will survive, but you will need to re-enter your server settings.
 
-## Step 3 — Add a Home Assistant Instance
-
-TaskerHA supports multiple Home Assistant instances. Each action and profile in Tasker is bound to a specific instance.
+## Step 3 — Add Your First Instance
 
 1. Open the **TaskerHA** app (not from inside Tasker).
 2. Tap **Add instance** and give it a name (e.g. `Home`).
-3. Enter the **URL** of your Home Assistant instance:
-   - Local: `http://192.168.1.xxx:8123`
-   - Remote: `https://ha.yourdomain.com`
-   - Do **not** add a trailing slash.
-   - Include the port only if needed (reverse proxies usually do not require one).
-4. Paste the **Long-Lived Access Token** you created.
-5. Tap **Test** — a success message confirms the connection works.
-6. Tap **Save**.
+3. Enter your Home Assistant URL (e.g. `http://192.168.1.xxx:8123` or `https://ha.yourdomain.com`).
+4. Paste the access token you created.
+5. Tap **Test**, then **Save**.
 
-Repeat for any additional instances you want to add.
-
-### Automatic URL switching
-
-Each instance can be configured with both a **local URL** and a **remote URL**. TaskerHA will automatically switch between them based on which Wi-Fi network your phone is connected to.
-
-- Set the **local URL** (e.g. `http://192.168.1.xxx:8123`) and the **Wi-Fi SSID(s)** of your home network.
-- Set the **remote URL** (e.g. `https://ha.yourdomain.com`) as the fallback.
-- When your phone is on a matching Wi-Fi network, the local URL is used. On any other connection, the remote URL is used.
-
-This means you don't need separate tasks or profiles for home vs. away — TaskerHA handles the switch automatically.
-
-### WebSocket and multiple instances
-
-The WebSocket connection (used by state-change and direct-message profiles) can only be **active on one instance at a time**. You can designate which instance is the active WebSocket instance in the app.
-
-Actions (Call Service, Get State, Send Message) do **not** require a WebSocket connection and work on all configured instances regardless of which one is active.
-
-### WebSocket setup
-
-Enable the **WebSocket** toggle on an instance if you want to use:
-- [Trigger State Change profile](/profiles/state-change)
-- [Direct Message from HA profile](/profiles/direct-message)
-
-When you enable it, Android will ask you to disable battery optimization for TaskerHA. **Allow it.** Without this, Android may kill the background connection and your profiles will stop firing.
-
-> Disabling WebSocket means all state-change and direct-message profiles will never fire, even if they are active in Tasker.
+That's it — you're ready to add actions and profiles in Tasker. For more advanced instance configuration (multiple servers, automatic local/remote URL switching) see the [Instances](/guide/instances) page.
 
 ## Step 4 — Add Actions or Profiles in Tasker
 
-All functionality is available under **Plugin → TaskerHA** in Tasker. When configuring each action or profile, you will be able to select which instance it should run against.
+All functionality is available under **Plugin → TaskerHA** in Tasker.
 
 | Feature | Type | Where to find |
 |---------|------|---------------|

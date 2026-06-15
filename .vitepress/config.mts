@@ -20,6 +20,8 @@ export default defineConfig({
         text: 'Getting Started',
         items: [
           { text: 'Setup', link: '/guide/setup' },
+          { text: 'Instances', link: '/guide/instances' },
+          { text: 'WebSocket', link: '/guide/websocket' },
         ],
       },
       {
