@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'TaskerHA',
+  title: 'TaskerHA - Docs',
   description: 'Full Home Assistant integration for Tasker',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
 
