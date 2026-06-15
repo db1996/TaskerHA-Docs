@@ -14,9 +14,6 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
-        # === Configure these ===
-        SSH_USER="$SSH_USER"
-        SSH_HOST="$SSH_HOST"
         # =======================
 
         mkdir -p ~/.ssh
