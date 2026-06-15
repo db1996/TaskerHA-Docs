@@ -49,6 +49,7 @@ export default defineConfig(async () => {
             { text: 'Instances', link: '/guide/instances' },
             { text: 'WebSocket', link: '/guide/websocket' },
             { text: 'Companion Integration', link: '/guide/companion' },
+            { text: 'Backup & Restore', link: '/guide/backup-restore' },
           ],
         },
         {
