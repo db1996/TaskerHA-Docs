@@ -60,6 +60,8 @@ alt="Download from GitHub releases" /></a>
 The companion HACS integration adds a TaskerHA device to Home Assistant.
 The app will use this to get labels, areas and devices from your instance. This allows targeting to work similarly to Home Assistant itself. It also gives you easy to use actions and triggers for direct messages back and forth
 
+[Check the full companion documentation for the benefits](/guide/companion.md)
+
 **Via HACS (recommended)**
 
 1. Make sure [HACS](https://hacs.xyz/docs/setup/download) is installed.
