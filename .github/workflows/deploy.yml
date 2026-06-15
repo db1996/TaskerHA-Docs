@@ -28,5 +28,5 @@ jobs:
             cd /home/debian/TaskerHA-Docs
             git pull
             docker compose down
-            docker compose up -d
+            docker compose up -d --build
           EOF
