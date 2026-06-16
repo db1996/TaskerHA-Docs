@@ -23,6 +23,17 @@ Client certificates are managed by Android's secure **KeyChain** system and cann
 4. Optionally enter a **password** to encrypt the file.
 5. Tap **Create & Share** — the Android share sheet opens so you can save the file to Google Drive, send it via WhatsApp, or save it locally.
 
+<div style="display:flex;gap:16px;margin:24px 0;align-items:flex-start;">
+  <figure style="flex:1;margin:0;text-align:center;">
+    <img src="/backup-restore/backup-restore-section.jpeg" alt="Options tab showing the Backup and Restore section" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+    <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);">Options tab — Backup &amp; Restore section</figcaption>
+  </figure>
+  <figure style="flex:1;margin:0;text-align:center;">
+    <img src="/backup-restore/create-backup.jpeg" alt="Create backup dialog with optional password field" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+    <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);">Create backup — optional password encryption</figcaption>
+  </figure>
+</div>
+
 The backup is saved as a `.taskerha_backup` file.
 
 ## Restoring a backup
@@ -34,6 +45,11 @@ The backup is saved as a `.taskerha_backup` file.
 3. Under **Backup & Restore**, tap **Restore**.
 4. If the backup is encrypted, enter the password.
 5. Tap **Select backup file** and pick the `.taskerha_backup` file.
+
+<figure style="margin:16px auto;max-width:320px;">
+  <img src="/backup-restore/restore-backup.jpeg" alt="Restore backup dialog with file picker and password field" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+  <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);text-align:center;">Restore dialog — select file and enter password if encrypted</figcaption>
+</figure>
 
 ### By tapping the file directly
 

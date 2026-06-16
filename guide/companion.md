@@ -38,6 +38,11 @@ Once installed, the app calls the `taskerha_companion.get_registry_data` service
 - Show an **Area** filter in entity pickers
 - Allow **targeting by area, device, or label** when calling services (matching how HA's own UI works)
 
+<figure style="margin:16px auto;max-width:320px;">
+  <img src="/companion/target-labels-tab.jpeg" alt="Entity picker with area and label filters" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+  <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);text-align:center;">Entity picker — filter by label or area when the companion is installed</figcaption>
+</figure>
+
 This service is called automatically by the app — you do not need to call it manually.
 
 ---

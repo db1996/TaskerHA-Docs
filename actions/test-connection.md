@@ -10,6 +10,11 @@ Pings your Home Assistant instance(s) and returns whether they are reachable. Us
 2. Select the instance to test (if you have multiple configured).
 3. Tap **Save**.
 
+<figure style="margin:16px auto;max-width:320px;">
+  <img src="/test-connection/test-connection-config.jpeg" alt="Test Connection action with instance selector" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+  <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);text-align:center;">Action config — select which instance to test</figcaption>
+</figure>
+
 No other configuration is needed. The action always runs without blocking on errors — it sets `%ha_remote` to `"true"` or `"false"` regardless of the result.
 
 ## What gets tested

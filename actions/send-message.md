@@ -14,6 +14,11 @@ This action sends the event over the active WebSocket connection. Make sure WebS
 2. Set a **Type** — a label that HA automations can filter on.
 3. Optionally set a **Message** — additional data to pass along.
 
+<figure style="margin:16px auto;max-width:320px;">
+  <img src="/grey-bg.png" alt="Send Message action config with Type and Message fields" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+  <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);text-align:center;">Action config — set Type and Message</figcaption>
+</figure>
+
 You can use Tasker variables in both fields.
 
 If you configure a type/message filter in your HA automation, the values sent from Tasker must match exactly for the automation to fire. Both sides act as filters — leave a field empty on either end to match anything.

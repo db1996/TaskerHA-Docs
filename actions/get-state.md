@@ -11,6 +11,11 @@ Fetches the current state and attributes of any Home Assistant entity and makes 
 3. Use the entity picker to find your entity. Filter by domain and use the fuzzy search to narrow results.
 4. Tap **Save**.
 
+<figure style="margin:16px auto;max-width:320px;">
+  <img src="/get-state/entity-picker.jpeg" alt="Entity picker with domain filter and search" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+  <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);text-align:center;">Entity picker — filter by domain and search by ID</figcaption>
+</figure>
+
 You can also enter an entity ID directly as a Tasker variable (e.g. `%my_entity`). Make sure to include the `%` prefix.
 
 ## Example — Check if the alarm is armed

@@ -15,6 +15,11 @@ Enable the WebSocket toggle in the TaskerHA app. Without it this profile will ne
    - If you leave a field empty, it matches any value.
    - If you fill it in, the event must include that exact value to fire.
 
+<figure style="margin:16px auto;max-width:320px;">
+  <img src="/message-from-ha/config-screen.jpeg" alt="Direct Message profile config with Type and Message filter fields" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+  <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);text-align:center;">Profile config — Type and Message filter fields</figcaption>
+</figure>
+
 You can use Tasker variables in both fields.
 
 ## Sending the message from Home Assistant
