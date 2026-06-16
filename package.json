@@ -22,13 +22,13 @@
   },
   "homepage": "https://github.com/db1996/TaskerHA-Docs#readme",
   "devDependencies": {
-    "@types/node": "^25.9.3",
-    "vitepress": "^1.6.4"
+    "@types/node": "^25.9.3"
   },
   "allowScripts": {
     "esbuild@0.21.5": true
   },
   "dependencies": {
-    "dotenv": "^17.4.2"
+    "dotenv": "^17.4.2",
+    "vitepress": "^1.6.4"
   }
 }
