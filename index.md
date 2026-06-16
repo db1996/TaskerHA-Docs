@@ -45,6 +45,14 @@ alt="Download from GitHub releases" /></a>
 
 </div>
 
+<script setup>
+const installCount = __INSTALL_COUNT__
+</script>
+
+<div v-if="installCount !== null" style="margin-top:12px;font-size:14px;color:var(--vp-c-text-2);">
+  Total installs: <strong style="color:var(--vp-c-text-1);">{{ installCount.toLocaleString() }}</strong>
+</div>
+
 
 ### 1. Install the Android App
 

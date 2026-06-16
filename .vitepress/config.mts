@@ -1,4 +1,7 @@
 import { defineConfig } from 'vitepress'
+import { loadEnv } from 'vite'
+
+const env = loadEnv('', process.cwd(), '')
 
 async function getGithubVersion(): Promise<string> {
   try {
@@ -12,7 +15,8 @@ async function getGithubVersion(): Promise<string> {
 
 async function getFdroidVersion(): Promise<string> {
   try {
-    const res = await fetch('https://f-droid.org/api/v1/packages/com.github.db1996.taskerha')
+      const res = await fetch('https://f-droid.org/api/v1/packages/com.github.db1996.taskerha')
+      console.log('Fetching F-Droid version from API...')
     const data = await res.json() as { suggestedVersionCode?: number; packages?: { versionName: string; versionCode: number }[] }
     const pkgs = data.packages ?? []
     const suggested = pkgs.find(p => p.versionCode === data.suggestedVersionCode)
@@ -22,13 +26,40 @@ async function getFdroidVersion(): Promise<string> {
   }
 }
 
+async function getInstallCount(): Promise<number | null> {
+  const adminKey = env.ADMIN_KEY
+  const appToken = env.APP_TOKEN
+    if (!adminKey || !appToken) {
+        return null
+    }
+  try {
+    const res = await fetch('https://taskerha-api.db1996-gh.com/stats', {
+      headers: { 'x-admin-key': adminKey, 'x-app-token': appToken },
+    })
+    if (!res.ok) return null
+    const data = await res.json() as { active?: number; inactive?: number; dead?: number }
+    return (data.active ?? 0) + (data.inactive ?? 0) + (data.dead ?? 0)
+  } catch {
+    return null
+  }
+}
+
 export default defineConfig(async () => {
-  const [githubVersion, fdroidVersion] = await Promise.all([getGithubVersion(), getFdroidVersion()])
+  const [githubVersion, fdroidVersion, installCount] = await Promise.all([
+    getGithubVersion(),
+    getFdroidVersion(),
+    getInstallCount(),
+  ])
 
   return {
     title: 'TaskerHA - Docs',
     description: 'Full Home Assistant integration for Tasker',
     head: [['link', { rel: 'icon', href: '/favicon.png' }]],
+    vite: {
+      define: {
+        __INSTALL_COUNT__: JSON.stringify(installCount),
+      },
+    },
 
     themeConfig: {
       logo: '/logo.png',
