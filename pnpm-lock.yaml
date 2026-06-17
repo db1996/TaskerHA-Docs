@@ -21,6 +21,9 @@ importers:
       vite:
         specifier: ^5.4.0
         version: 5.4.21(@types/node@25.9.3)
+      vue:
+        specifier: ^3.5.38
+        version: 3.5.38
 
 packages:
 

@@ -1,38 +1,9 @@
 import { defineConfig } from 'vitepress'
-import { loadEnv } from 'vite'
 
-const env = loadEnv('', process.cwd(), '')
-
-async function getInstallCount(): Promise<number | null> {
-  const adminKey = env.ADMIN_KEY
-  const appToken = env.APP_TOKEN
-  if (!adminKey || !appToken) {
-    return null
-  }
-  try {
-    const res = await fetch('https://taskerha-api.db1996-gh.com/stats', {
-      headers: { 'x-admin-key': adminKey, 'x-app-token': appToken },
-    })
-    if (!res.ok) return null
-    const data = await res.json() as { active?: number; inactive?: number; dead?: number }
-    return (data.active ?? 0) + (data.inactive ?? 0) + (data.dead ?? 0)
-  } catch {
-    return null
-  }
-}
-
-export default defineConfig(async () => {
-  const installCount = await getInstallCount()
-
-  return {
+export default defineConfig({
     title: 'TaskerHA - Docs',
     description: 'Full Home Assistant integration for Tasker',
     head: [['link', { rel: 'icon', href: '/favicon.png' }]],
-    vite: {
-      define: {
-        __INSTALL_COUNT__: JSON.stringify(installCount),
-      },
-    },
 
     themeConfig: {
       logo: '/logo.png',
@@ -93,5 +64,4 @@ export default defineConfig(async () => {
         text: 'Edit this page on GitHub',
       },
     },
-  }
 })

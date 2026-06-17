@@ -17,14 +17,9 @@ onMounted(async () => {
     fetch('https://api.github.com/repos/db1996/TaskerHa/releases/latest')
       .then(r => r.json() as Promise<{ tag_name?: string }>)
       .then(d => d.tag_name ?? ''),
-    fetch('https://f-droid.org/api/v1/packages/com.github.db1996.taskerha')
-      .then(r => r.json() as Promise<{ suggestedVersionCode?: number; packages?: { versionName: string; versionCode: number }[] }>)
-      .then(d => {
-        const pkgs = d.packages ?? []
-          const suggested = pkgs.find(p => p.versionCode === d.suggestedVersionCode)
-        console.log('fdroid', d, suggested, pkgs)
-        return 'v' + (suggested?.versionName ?? pkgs[0]?.versionName ?? '')
-      }),
+    fetch('https://taskerha-api.db1996-gh.com/fdroid-version')
+      .then(r => r.json() as Promise<{ version?: string }>)
+      .then(d => d.version ?? ''),
   ])
 
   githubVersion.value = gh.status === 'fulfilled' ? gh.value : ''
