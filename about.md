@@ -10,6 +10,8 @@ The main Android app — download, source code, and release notes.
 - [Latest Release](https://github.com/db1996/TaskerHa/releases/latest)
 - [F-Droid](https://f-droid.org/packages/com.github.db1996.taskerha/)
 
+<FDroidWarning />
+
 ### Companion Integration (HACS)
 
 The optional Home Assistant custom integration for richer targeting and bidirectional messaging.

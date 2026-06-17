@@ -1,18 +1,10 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
+import { onMounted } from 'vue'
+import { useAppStore } from '../useAppStore'
 
-const activeInstalls = ref(0)
-const inactiveInstalls = ref(0)
-const totalInstalls = computed(() => activeInstalls.value + inactiveInstalls.value)
+const { activeInstalls, inactiveInstalls, totalInstalls, fetchAll } = useAppStore()
 
-onMounted(async () => {
-  const res = await fetch('https://taskerha-api.db1996-gh.com/install-count')
-    .then(r => r.json() as Promise<{ active?: number; inactive?: number }>)
-    .catch(() => ({ active: 0, inactive: 0 }))
-
-  activeInstalls.value = res.active ?? 0
-  inactiveInstalls.value = res.inactive ?? 0
-})
+onMounted(fetchAll)
 </script>
 
 <template>

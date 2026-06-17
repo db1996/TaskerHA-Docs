@@ -47,6 +47,7 @@ alt="Download from GitHub releases" /></a>
 
 <!-- <DownloadCount /> -->
 
+<FDroidWarning />
 
 ### 1. Install the Android App
 

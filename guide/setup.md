@@ -1,4 +1,4 @@
-# Setup
+﻿# Setup
 
 ## Requirements
 
@@ -16,16 +16,12 @@
   <figcaption style="margin-top:8px;font-size:13px;color:var(--vp-c-text-2);text-align:center;">HA profile → Security tab → Long-Lived Access Tokens → Create token</figcaption>
 </figure>
 
-## Step 2 — Install the App
+## Step 2 
+<DownloadTable />
 
-| Source | Notes |
-|--------|-------|
-| [GitHub Releases](https://github.com/db1996/TaskerHa/releases/latest) | Latest version, sideload APK |
-| [F-Droid](https://f-droid.org/packages/com.github.db1996.taskerha/) | Open-source store, may lag behind |
+> You cannot install both versions side by side, the APK files are the exact same so if you install the GitHub version, F-Droid can update it without issues afterwards
 
-> You cannot install both versions side by side — uninstall one before switching sources. Your tasks and profiles will survive, but you will need to re-enter your server settings.
-
-## Step 3 — Add Your First Instance
+## Step 3 — Add ards.Your First Instance
 
 1. Open the **TaskerHA** app (not from inside Tasker).
 2. Tap **Add instance** and give it a name (e.g. `Home`).
@@ -52,4 +48,4 @@ All functionality is available under **Plugin → TaskerHA** in Tasker.
 | React to entity changes | Profile | New Profile → Plugin → TaskerHA → HA On Trigger State |
 | Receive messages from HA | Profile | New Profile → Plugin → TaskerHA → HA Direct Message |
 
-See the individual pages for full configuration details and variable references.
+See the individual pages for full configuration details and variable references.for full configuration details and variable references.

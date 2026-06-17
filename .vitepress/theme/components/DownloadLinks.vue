@@ -1,9 +1,8 @@
-
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
+import { onMounted, computed } from 'vue'
+import { useAppStore } from '../useAppStore'
 
-const githubVersion = ref('')
-const fdroidVersion = ref('')
+const { githubVersion, fdroidVersion, fetchAll } = useAppStore()
 
 const fdroidLabel = computed(() => {
   if (!fdroidVersion.value || !githubVersion.value) return fdroidVersion.value
@@ -12,20 +11,9 @@ const fdroidLabel = computed(() => {
     : fdroidVersion.value
 })
 
-onMounted(async () => {
-  const [gh, fd] = await Promise.allSettled([
-    fetch('https://api.github.com/repos/db1996/TaskerHa/releases/latest')
-      .then(r => r.json() as Promise<{ tag_name?: string }>)
-      .then(d => d.tag_name ?? ''),
-    fetch('https://taskerha-api.db1996-gh.com/fdroid-version')
-      .then(r => r.json() as Promise<{ version?: string }>)
-      .then(d => d.version ?? ''),
-  ])
-
-  githubVersion.value = gh.status === 'fulfilled' ? gh.value : ''
-  fdroidVersion.value = fd.status === 'fulfilled' ? fd.value : ''
-})
+onMounted(fetchAll)
 </script>
+
 <template>
   <div class="download-links">
     <p class="download-links__title">Download</p>
