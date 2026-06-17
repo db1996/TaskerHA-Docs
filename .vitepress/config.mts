@@ -23,7 +23,7 @@ async function getFdroidVersion(): Promise<string> {
     return 'v' + (suggested?.versionName ?? pkgs[0]?.versionName ?? 'Latest')
   } catch {
     return 'Latest'
-  }
+  } 
 }
 
 async function getInstallCount(): Promise<number | null> {
