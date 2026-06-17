@@ -3,35 +3,12 @@ import { loadEnv } from 'vite'
 
 const env = loadEnv('', process.cwd(), '')
 
-async function getGithubVersion(): Promise<string> {
-  try {
-    const res = await fetch('https://api.github.com/repos/db1996/TaskerHa/releases/latest')
-    const data = await res.json() as { tag_name?: string }
-    return data.tag_name ?? 'Latest'
-  } catch {
-    return 'Latest'
-  }
-}
-
-async function getFdroidVersion(): Promise<string> {
-  try {
-      const res = await fetch('https://f-droid.org/api/v1/packages/com.github.db1996.taskerha')
-      console.log('Fetching F-Droid version from API...')
-    const data = await res.json() as { suggestedVersionCode?: number; packages?: { versionName: string; versionCode: number }[] }
-    const pkgs = data.packages ?? []
-    const suggested = pkgs.find(p => p.versionCode === data.suggestedVersionCode)
-    return 'v' + (suggested?.versionName ?? pkgs[0]?.versionName ?? 'Latest')
-  } catch {
-    return 'Latest'
-  } 
-}
-
 async function getInstallCount(): Promise<number | null> {
   const adminKey = env.ADMIN_KEY
   const appToken = env.APP_TOKEN
-    if (!adminKey || !appToken) {
-        return null
-    }
+  if (!adminKey || !appToken) {
+    return null
+  }
   try {
     const res = await fetch('https://taskerha-api.db1996-gh.com/stats', {
       headers: { 'x-admin-key': adminKey, 'x-app-token': appToken },
@@ -45,11 +22,7 @@ async function getInstallCount(): Promise<number | null> {
 }
 
 export default defineConfig(async () => {
-  const [githubVersion, fdroidVersion, installCount] = await Promise.all([
-    getGithubVersion(),
-    getFdroidVersion(),
-    getInstallCount(),
-  ])
+  const installCount = await getInstallCount()
 
   return {
     title: 'TaskerHA - Docs',
@@ -98,14 +71,6 @@ export default defineConfig(async () => {
           items: [
             { text: 'Trigger State Change', link: '/profiles/state-change' },
             { text: 'Direct Message from HA', link: '/profiles/direct-message' },
-          ],
-        },
-        
-        {
-          text: 'Download',
-          items: [
-            { text: `GitHub ${githubVersion}`, link: 'https://github.com/db1996/TaskerHa/releases/latest' },
-            { text: `F-Droid ${fdroidVersion + (fdroidVersion !== githubVersion ? ' - pending' : '')}`, link: 'https://f-droid.org/packages/com.github.db1996.taskerha/' },
           ],
         },
       ],
