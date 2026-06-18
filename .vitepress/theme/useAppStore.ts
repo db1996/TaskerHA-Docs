@@ -28,24 +28,18 @@ export function useAppStore() {
     if (fetched.value || fetching.value) return;
     fetching.value = true;
 
-    const [gh, fd, installs] = await Promise.allSettled([
-      fetch("https://api.github.com/repos/db1996/TaskerHa/releases/latest")
-        .then((r) => r.json() as Promise<{ tag_name?: string }>)
-        .then((d) => d.tag_name ?? null),
-      fetch("https://taskerha-api.db1996-gh.com/fdroid-version")
-        .then((r) => r.json() as Promise<{ version?: string }>)
-        .then((d) => d.version ?? null),
-      fetch("https://taskerha-api.db1996-gh.com/install-count").then(
-        (r) => r.json() as Promise<{ active?: number; inactive?: number }>,
-      ),
-    ]);
+    const result = await fetch("https://taskerha-api.db1996-gh.com/data")
+      .then((r) => r.json() as Promise<{
+        github_version?: string;
+        fdroid_version?: string;
+        install_count?: { active?: number; inactive?: number };
+      }>)
+      .catch(() => null);
 
-    githubVersion.value = gh.status === "fulfilled" ? gh.value : null;
-    fdroidVersion.value = fd.status === "fulfilled" ? fd.value : null;
-    if (installs.status === "fulfilled") {
-      activeInstalls.value = installs.value.active ?? 0;
-      inactiveInstalls.value = installs.value.inactive ?? 0;
-    }
+    githubVersion.value = result?.github_version ?? null;
+    fdroidVersion.value = result?.fdroid_version ?? null;
+    activeInstalls.value = result?.install_count?.active ?? 0;
+    inactiveInstalls.value = result?.install_count?.inactive ?? 0;
 
     fetched.value = true;
     fetching.value = false;
