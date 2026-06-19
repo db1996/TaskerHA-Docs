@@ -24,6 +24,6 @@ jobs:
           ssh -i ~/.ssh/deploy_key "$SSH_USER@$SSH_HOST" << 'EOF'
             cd /home/debian/TaskerHA-Docs
             git pull
-            docker compose down
-            docker compose up -d --build
+            docker compose build
+            docker compose up -d
           EOF
