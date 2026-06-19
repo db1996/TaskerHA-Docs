@@ -4,10 +4,6 @@
 
 Fires an event from Tasker to Home Assistant, allowing your HA automations to react to things happening on your phone.
 
-::: warning WebSocket required
-This action sends the event over the active WebSocket connection. Make sure WebSocket is enabled in the TaskerHA app.
-:::
-
 ## How to use
 
 1. In Tasker, open a task and tap **+** → **Plugin** → **TaskerHA** → **HA Send Message Back**.
