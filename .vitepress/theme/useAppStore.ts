@@ -28,7 +28,9 @@ export function useAppStore() {
     if (fetched.value || fetching.value) return;
     fetching.value = true;
 
-    const result = await fetch("https://taskerha-api.db1996-gh.com/data")
+    const result = await fetch("https://taskerha-api.db1996-gh.com/data", {
+        headers: { "x-app-token": import.meta.env.VITE_APP_TOKEN ?? "" },
+      })
       .then((r) => r.json() as Promise<{
         github_version?: string;
         fdroid_version?: string;
