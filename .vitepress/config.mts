@@ -3,7 +3,17 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
     title: 'TaskerHA - Docs',
     description: 'Full Home Assistant integration for Tasker',
-    head: [['link', { rel: 'icon', href: '/favicon.png' }]],
+    head: [
+        ['link', { rel: 'icon', href: '/favicon.png' }],
+        [
+            'script',
+            {
+                async: '',
+                src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7855784500793275',
+                crossorigin: 'anonymous',
+            },
+        ],
+    ],
 
     themeConfig: {
       logo: '/logo.png',
