@@ -2,9 +2,9 @@
 import { onMounted, watch, nextTick, ref } from 'vue'
 import { useRoute } from 'vitepress'
 
-// Fill these in with your own AdSense values.
-const AD_CLIENT = 'ca-pub-XXXXXXXXXXXXXXXX'
-const AD_SLOT = 'XXXXXXXXXX'
+const AD_CLIENT = 'ca-pub-7855784500793275'
+const AD_SLOT = '4686323181'
+const AD_LAYOUT_KEY = '-gw-3+1f-3d+2z'
 
 const route = useRoute()
 // Bump the key on every navigation so Vue mounts a fresh <ins>. AdSense refuses
@@ -38,10 +38,10 @@ watch(
                 :key="adKey"
                 class="adsbygoogle"
                 style="display: block"
+                data-ad-format="fluid"
+                :data-ad-layout-key="AD_LAYOUT_KEY"
                 :data-ad-client="AD_CLIENT"
                 :data-ad-slot="AD_SLOT"
-                data-ad-format="auto"
-                data-full-width-responsive="true"
             />
         </div>
     </ClientOnly>
